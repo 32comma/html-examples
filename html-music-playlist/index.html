@@ -19,12 +19,12 @@
         }
 
         #menu {
+            padding: 0.5rem;
             float: left;
             width: auto;
             height: auto;
             background-color: black;
             box-sizing: border-box;
-            border-right: 1px solid white;
             position: absolute;
             top: 3rem;
             right: 1rem;
@@ -48,10 +48,18 @@
             z-index: 0;
             left: 0;
             top: 0;
-            width: 100%;
-            height: 100%;
+            width: 100vw;
+            height: 100vh;
             box-sizing: border-box;
             position: absolute;
+            background-color: black;
+        }
+
+        .row {
+            margin-bottom: 0.5rem;
+        }
+
+        .row:hover {
             background-color: black;
         }
     </style>
@@ -76,11 +84,18 @@
             { id: 'eAP5RZe-IDo', title: 'No Problem', artist: 'Dvwn' },
             { id: 'oBKpJiVEcnU', title: 'Breath', artist: 'Park Hyo Shin' },
             { id: '_Cfz5Mi1u8k', title: '아마도 그건', artist: 'Crush, Loco' },
+            { id: 'R3Fwdnij49o', title: 'Above the time', artist: 'IU' },
+            { id: '83IfZhO4Pd0', title: '기억을 걷는 시간', artist: '넬' },
+            { id: 'IDD5_z3kKCU', title: '지켜줄게', artist: '백예린' },
+            { id: 'IUoTjkS242c', title: 'Wi Ing Wi Ing', artist: 'Hyukoh' },
+            { id: 'XcRCatv8PDM', title: ' 나비보벳따우 가사 & 한글해석', artist: 'K.K. House' },
+            { id: 'xRbPAVnqtcs', title: 'Travel', artist: 'Bol4' },
+            { id: 'MOWDb2TBYDg', title: 'Happy', artist: 'Pharrell Williams ( feat. Minions )' }
         ];
         var menu = document.getElementById('menu');
         var html = "";
         for (var i = 0; i < list.length; i++) {
-            html += `<div><a target='frame' href="https://www.youtube.com/embed/${list[i].id}?controls=0">${list[i].title} / ${list[i].artist}</a></div>`;
+            html += `<div class='row'><a target='frame' href="https://www.youtube.com/embed/${list[i].id}?controls=0">${list[i].title} / ${list[i].artist}</a></div>`;
         }
         menu.innerHTML = html;
     </script>
