@@ -20,19 +20,33 @@
 
         #menu {
             padding: 0.5rem;
-            float: left;
             width: auto;
-            height: 200px;
+            height: 300px;
             background-color: black;
             box-sizing: border-box;
             position: absolute;
-            top: 3rem;
+            top: 100px;
             right: 1rem;
             z-index: 1;
             background-color: rgba(255, 255, 255, 0.1);
             color: white;
             overflow-y: scroll;
 
+        }
+
+        #toggle-button {
+            top: 400px;
+            right: 1rem;
+            position: absolute;
+            z-index: 2;
+            color: white;
+            font-size: 1rem;
+            width: 50px;
+            height: 20px;
+        }
+
+        #toggle-button:hover {
+            color:chartreuse;
         }
 
         a,
@@ -91,9 +105,11 @@
 
         
     -->
-
+    <div id="toggle-button">
+        ▲
+    </div>
     <div id="menu">
-        left
+
     </div>
 
     <iframe name='frame' src="https://www.youtube.com/embed/ydlmygcZWLA?controls=0" title="YouTube video player"
@@ -123,6 +139,21 @@
             html += `<div class='row'><a target='frame' href="https://www.youtube.com/embed/${list[i].id}?controls=0">${list[i].title} / ${list[i].artist}</a></div>`;
         }
         menu.innerHTML = html;
+
+    </script>
+    <script>
+        var flag = true;
+        var toggleButton = document.getElementById('toggle-button');
+        toggleButton.addEventListener('click', function (e) {
+            flag = !flag;
+            if (flag) {
+                toggleButton.innerHTML = '▼';
+                menu.style.visibility = 'hidden';
+            } else {
+                toggleButton.innerHTML = '▲';
+                menu.style.visibility = 'visible';
+            }
+        })
     </script>
 </body>
 
