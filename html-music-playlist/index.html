@@ -22,7 +22,7 @@
             padding: 0.5rem;
             float: left;
             width: auto;
-            height: auto;
+            height: 200px;
             background-color: black;
             box-sizing: border-box;
             position: absolute;
@@ -31,7 +31,7 @@
             z-index: 1;
             background-color: rgba(255, 255, 255, 0.1);
             color: white;
-
+            overflow-y: scroll;
 
         }
 
@@ -61,6 +61,27 @@
 
         .row:hover {
             background-color: black;
+        }
+
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        /* Track */
+        ::-webkit-scrollbar-track {
+            -webkit-border-radius: 10px;
+            border-radius: 10px;
+        }
+
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+            -webkit-border-radius: 10px;
+            border-radius: 10px;
+            background: white;
+        }
+
+        ::-webkit-scrollbar-thumb:window-inactive {
+            background: gray;
         }
     </style>
 </head>
